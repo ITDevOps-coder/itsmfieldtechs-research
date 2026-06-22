@@ -1,0 +1,35 @@
+﻿Release: onboarding workflow and technician portal production readiness
+Date: 2026-06-18
+
+Included files:
+- itsm-employee-onboarding/itsm-employee-onboarding.php
+- itsm-employee-onboarding/templates/technician-portal-template.php
+- mu-plugins/itsm-mail-delivery-fix.php
+- mu-plugins/itsm-native-mail-bridge.php
+
+Dev validation summary:
+- Manual onboarding workflow passed end to end on research.itsmfieldtechs.com
+- Technician Portal login, redirect, UI readability, and attendance passed
+- Raw JSON upload issue fixed
+- PHP lint passed on deployed dev files
+
+Known exclusions:
+- backup files
+- tmp_* helpers
+- logs and cache files
+- uploaded private documents
+- screenshots
+- tokens and reset links
+- database dumps
+
+Production prerequisites:
+- confirm production branch and GitHub sync
+- confirm production plugin and MU plugin paths
+- confirm legacy bridge remains inactive
+- confirm production URLs and email routing
+- run smoke tests after deployment
+
+Rollback notes:
+- restore prior plugin/template backup if needed
+- keep bridge inactive unless explicitly approved
+- clear cache after rollback
